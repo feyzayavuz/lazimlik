@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'social_auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,3 +85,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = ('templates/',)
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+TWITTER_CONSUMER_KEY = 'OSNCdJRL5peUAqdNVtQMF3qdq'
+TWITTER_CONSUMER_SECRET = 'n8mKW2KglMrzybFbZwq2aQ2XZk964J4bSNJTfISF1ZyMfZCTG2'
+
+LOGIN_URL = '/giris/'
+LOGIN_REDIRECT_URL = '/home/'
+LOGIN_ERROR_URL = '/login-error/'
+
+
